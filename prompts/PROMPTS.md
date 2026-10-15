@@ -292,7 +292,7 @@ To exit
 The expanded tracking box is working perfectly. This is the final task for this version of the application. 
 ```
 
-**What changed:** [Add your reflection for this prompt]
+
 
 ---
 
