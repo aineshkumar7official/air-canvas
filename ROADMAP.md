@@ -1,5 +1,5 @@
 # Roadmap
-
+This document outlines the current features and future development phases for the Hand-Tracking Canvas application. 
 ## ✅ v1.0 (Current Release)
 
 - **Core Tools:** Implemented fully functional Draw, Cursor, and Eraser modes.
