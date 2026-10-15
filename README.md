@@ -2,7 +2,7 @@
 
 > A touchless drawing tool that lets you paint in the air using just your webcam and hand movements.
 
-<p align="left">
+<p align= "left">
   <img src="display.JPG" alt="Air Canvas demo" width="200">
 </p>
 
@@ -32,18 +32,57 @@ Also includes:
 - Welcome screen with hand calibration
 
 ## Getting started
-### Requirements
-- Python 3.12 or newer
-- A webcam
 
-### Install and run
+Requires a webcam and **Python 3.12** (newer versions may not support MediaPipe yet).
+
+### 👩‍💻 For developers
+
 ```bash
 git clone https://github.com/aineshkumar7official/air-canvas.git
 cd air-canvas
 pip install -r requirements.txt
 python3 airCanvasv1.py
 ```
-The hand-tracking model downloads automatically the first time you run it. Press **q** or **Esc** to quit.
+
+The hand-tracking model (`hand_landmarker.task`) downloads automatically on first run. Press **q** or **Esc** to quit.
+
+### 🙋 Not technical? Follow these steps
+
+<details>
+<summary><b>Click to expand the step-by-step guide</b></summary>
+
+#### 1. Install Python
+Download [Python 3.12](https://www.python.org/downloads/) and install it.
+**Windows:** tick **"Add Python to PATH"** on the first install screen.
+
+#### 2. Download Air Canvas
+**[⬇️ Click here to download Air Canvas (ZIP)](https://github.com/aineshkumar7official/air-canvas/archive/refs/heads/main.zip)**
+
+Then find the downloaded file (usually in your **Downloads** folder) and double-click it to unzip. You'll get a folder called `air-canvas-main`.
+
+<sub>Or download it from GitHub yourself: scroll to the top of this page → click the green <kbd>&lt;&gt; Code</kbd> button (above the file list, on the right) → click <kbd>Download ZIP</kbd>.</sub>
+
+#### 3. Open a terminal in the folder
+- **Mac:** open the **Terminal** app, type `cd ` (with a space), drag the `air-canvas-main` folder into the window, and press Enter.
+- **Windows:** open the `air-canvas-main` folder, click the address bar at the top, type `cmd`, and press Enter.
+
+#### 4. Install and run
+| | Mac | Windows |
+| --- | --- | --- |
+| Install (one time only) | `pip3 install -r requirements.txt` | `pip install -r requirements.txt` |
+| Start Air Canvas | `python3 airCanvasv1.py` | `python airCanvasv1.py` |
+
+The first launch needs internet. After that, hold up your index finger for 2 seconds to start drawing. Press **q** to quit.
+
+#### Troubleshooting
+| Problem | Fix |
+| --- | --- |
+| Mac: black screen or no camera | System Settings → Privacy & Security → Camera → turn on **Terminal**, then reopen Terminal |
+| `pip` or `python` not found | On Mac use `pip3` / `python3`. On Windows, reinstall Python with "Add to PATH" ticked |
+| MediaPipe won't install | Make sure you installed Python 3.12 |
+| Icons look like plain boxes | That's expected. Custom design assets aren't included, so built-in shapes are used |
+
+</details>
 
 ## Tech stack
 - **Python**
@@ -62,4 +101,3 @@ USF | B.S. Computer Science & Business, FinTech | Class of 2030<br>
 
 ## License
 MIT. See [LICENSE](LICENSE).
-
