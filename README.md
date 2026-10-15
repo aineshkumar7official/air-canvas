@@ -33,7 +33,7 @@ Also includes:
 
 ## Getting started
 ### Requirements
-- python3 --version
+- Python 3.12 or newer
 - A webcam
 
 ### Install and run
@@ -56,7 +56,10 @@ The hand-tracking model downloads automatically the first time you run it. Press
 See [ROADMAP.md](ROADMAP.md)
 
 ## Author
-**Ainesh Kumar**
-USF | B.S. Computer Science & Business, FinTech | Class of 2030
+**Ainesh Kumar**<br>
+USF | B.S. Computer Science & Business, FinTech | Class of 2030<br>
 [LinkedIn](https://www.linkedin.com/in/aineshkumarofficial/) · [GitHub](https://github.com/aineshkumar7official)
+
+## License
+MIT. See [LICENSE](LICENSE).
 
