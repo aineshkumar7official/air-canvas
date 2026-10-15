@@ -1,4 +1,36 @@
-(Prompt #1) 
+# Prompt Log
+
+Air Canvas v1 was built through the prompts below using Claude Code. Each prompt is shown exactly as I wrote it, followed by my reflection on what changed.
+
+> **My prompt structure:** Role → Task → Context → Constraints
+
+## Overview
+
+| # | Focus |
+| --- | --- |
+| [1](#prompt-1-core-drawing-app) | Core drawing app |
+| [2](#prompt-2-eraser-button-camera-placement-and-canvas-border) | Eraser button, camera placement, and canvas border |
+| [3](#prompt-3-cursor-mode) | Cursor mode |
+| [4](#prompt-4-safe-zones-selection-animation-and-eraser-brush) | Safe zones, selection animation, and eraser brush |
+| [5](#prompt-5-fist-clear-countdown-and-shaded-zones) | Fist-clear countdown and shaded zones |
+| [6](#prompt-6-welcome-and-calibration-screen) | Welcome and calibration screen |
+| [7](#prompt-7-custom-ui-design-icons-and-fonts) | Custom UI design (icons and fonts) |
+| [8](#prompt-8-adaptive-edge-warning) | Adaptive edge warning |
+| [9](#prompt-9-single-border-fix) | Single border fix |
+| [10](#prompt-10-shaded-no-drawing-zones) | Shaded no-drawing zones |
+| [11](#prompt-11-expanded-hand-tracking) | Expanded hand tracking |
+| [12a](#prompt-12a-information-box-first-draft) | Information box (first draft) |
+| [12b](#prompt-12b-information-box-navigation) | Information box navigation |
+
+## Overall reflection
+
+From this project, I learned how to use different prompt engineering techniques to guide an AI assistant through iterative prompting which involved testing each version, describing what worked and didn't. I understood what detailed and organized prompts produce better results than short ones and its important to check code and ensure every requirements get built.
+
+---
+
+## Prompt 1: Core drawing app
+
+```text
 Role 
 Act as an expert Python and computer vision engineer. 
 
@@ -30,11 +62,15 @@ Constraints
 2.	Don’t write comments; I will add them to show I understand the code. 
 
 Place the code in Visual Studio Code IDE. 
+```
 
+**What changed:** The first build set up the UI which included buttons, drawing and screenshots well. However, the pinch-to-erase toggle did not work.
 
+---
 
+## Prompt 2: Eraser button, camera placement, and canvas border
 
-(Prompt #2) 
+```text
 Okay, the code so far handles drawing and color selection well. Here is what we need to improve on.
 
 Eraser Mode
@@ -50,24 +86,42 @@ Canvas
 2.	Input Restriction: Prevent the user from drawing outside the input area.
 
 Please update the existing code structure to implement these changes cleanly. 
+```
 
+**What changed:** The pinch gesture was replaced with an eraser button you hover over to stop accidental triggers. The clear-all and screenshot features worked more reliably and the canvas was more limited.
 
-(Prompt #3)
+---
+
+## Prompt 3: Cursor mode
+
+```text
 Okay, the camera button and UI are working well, but we need to establish one element. 
 1.	Cursor Mode: When the user holds up just the middle and index fingers, 
 2.	How it works: No drawing or erasing should occur. 
 3.	Visual Feedback: Have a small neutral white dot so the user knows where they are going. 
+```
 
+**What changed:** The app had a cursor mode where user held up index finger and middle finger which allowed user to preview where they'll draw before they start.
 
-(Prompt #4)
+---
+
+## Prompt 4: Safe zones, selection animation, and eraser brush
+
+```text
 Okay, cursor mode looks good. Now need to do a few refinements
 
 1.	Hot corners/sections (Canvas Safe Zones): Define explicit boundary areas where drawing lines is disabled 
 2.	Color/Eraser Selection: When the user hovers over a color box or eraser box, render a visual animation to confirm selection. 
 3.	Eraser Mode Mechanics: When Eraser mode is active, the index finger tracks a localized eraser brush that clears specifc pixels, not the whole thing. 
+```
 
+**What changed:** The UX animations now confirms when a color is picked, safe zones are more explicit and the eraser mode only cleared what the index finger wanted to clear instead of whole canvas.
 
-(Prompt #5) 
+---
+
+## Prompt 5: Fist-clear countdown and shaded zones
+
+```text
 Okay, the eraser tool works well, and animations are good. A few more refinements
 
 Safe Zones: 
@@ -82,9 +136,15 @@ Fist Clear Loop Logic:
 - Stage 3 (Continuous Hold Check): 
   - If the user keeps holding the fist up after the clear message appears, wait 1.5 seconds, remove the message, and automatically start a brand new 3-2-1 countdown loop.
   - If the user opens their hand at any point after the clear, remove the notification text immediately and return to normal drawing mode.
+```
 
+**What changed:** Instead of clearing the canvas instantly, there was a 3-2-1 countdown giving users time to cancel and a notifcation so users knows when its okay to draw again.
 
-(Prompt #6) 
+---
+
+## Prompt 6: Welcome and calibration screen
+
+```text
 The drawing, eraser, and cursor modes work well. 
 
 Now I want to have an instructions and calibration page that appears before the user enters the main drawing canvas. 
@@ -109,15 +169,27 @@ Please implement the following layout, UI elements, and transition logic.
 
 1.	Display a blinking or highlighted prompt: "(Hold up just your index finger to calibrate and start)" - 
 2.	Detection Check: The system must actively scan the webcam feed while on this page. If it detects the user successfully holding up exactly their index finger (and no other fingers) for a sustained 2 seconds (e.g., a simple frame counter), trigger the transition.
+```
 
+**What changed:** Before the user did not know what to do when the canvas opened, now there was a clear welcome screen for how to start.
 
-(Prompt #7) 
+---
+
+## Prompt 7: Custom UI design (icons and fonts)
+
+```text
 Okay, I want to focus on the UI elements right now.
 
 Look at the design elements in the AirCanvas interface and AirCanvas fonts and use those images/fonts to update the UI. 
+```
 
+**What changed:** The default UI involved plain hard to rad boxes so I designed custom icons and fonts to make it clearer.
 
-(Prompt #7) 
+---
+
+## Prompt 8: Adaptive edge warning
+
+```text
  Now, I want to implement an adaptive "Safe Zone" and "Danger Zone" boundary system on the drawing canvas to prevent users from drawing too close to the edges or UI elements. Please update the canvas logic with the following adaptive boundary rules: 
 
 1. Boundary Definitions: - Safe Zone: 
@@ -129,8 +201,15 @@ Normal State: While the user's active drawing fingertip is well within the Safe 
 On-Screen Warning: When in the Danger Zone, overlay a small, semi-transparent text warning near the top of the screen that says "WARNING: Approaching Edge".
 
 Please integrate this adaptive color-changing border and warning logic cleanly into our existing coordinates check loop.
+```
 
-(Prompt #8) 
+**What changed:** The user kept drawing in areas where they couldn't draw. Now they were alerted ahead of time with a flashing border  to avoid the danger areas.
+
+---
+
+## Prompt 9: Single border fix
+
+```text
 Okay, the color-changing border works well, but the UI needs to be improved
 
 Current state
@@ -141,8 +220,15 @@ What to improve
 2.	 If the user's fingertip moves into the Warning/Danger Zone buffer, dynamically change the canvas border color from black to flashing red. - 
 3.	On-Screen Warning: When in the Danger Zone, overlay a small, semi-transparent text warning near the top of the screen that says "WARNING: Approaching Edge".
 Please integrate this adaptive color-changing border and warning logic cleanly into our existing coordinates check loop.
+```
 
-(Prompt #9) 
+**What changed:** Before the canvas was small because the border was not clear. The result was a single dynmaic black border which flashes red when user moves finger near the edges.
+
+---
+
+## Prompt 10: Shaded no-drawing zones
+
+```text
 Okay, the black border looks much better. There are still some UI’s that need to be improved.
 
 1.	No drawing zones: put shaded zones showcasing where user cannot draw 
@@ -162,9 +248,15 @@ Please update the UI and boundary logic with the following rules:
 - Visual Feedback: Change the main canvas border to solid red, display an on-screen text warning ("Restricted Area - Drawing Disabled"), and automatically pause any line-drawing or point-appending inputs.
 
 Please integrate these transparent shaded blocks and coordinate checks cleanly into our main drawing loop.
+```
 
+**What changed:** The black border did not include restricted areas and did not include all the places where the user couldn't draw. Now it was explict about where user can or cannot draw.
 
-(Prompt #10) 
+---
+
+## Prompt 11: Expanded hand tracking
+
+```text
 The UI zones and warnings are working well. However, there is an issue with hand tracking because the box is not wide enough. 
 
 Please update the following requirements. 
@@ -178,9 +270,15 @@ Please update the following requirements.
 
 3. Edge-Tolerance Logic:
 - If the hand approaches the outer boundaries of this expanded box, gracefully maintain tracking rather than instantly dropping the hand state or misinterpreting gestures.
+```
 
-(Prompt #11)
+**What changed:** User would place whole hand but it would not start tracking.The prompt created a bigger tracking box so hand tracking was clearer.
 
+---
+
+## Prompt 12a: Information box (first draft)
+
+```text
 Okay, the final task of this version. 
 
 Look at the design elements in the AirCanvas interface and create an information box where the user can hover to remember the instructions.
@@ -192,9 +290,15 @@ To exit
 1.	Recalibrate hand. 
 
 The expanded tracking box is working perfectly. This is the final task for this version of the application. 
+```
 
+**What changed:** [Add your reflection for this prompt]
 
-(Prompt #12)
+---
+
+## Prompt 12b: Information box navigation
+
+```text
 I want to add a persistent "Information Box" UI element to the main drawing canvas. This will act as a quick-reference guide so users can easily recall how to navigate back to the instructions/calibration page.
 
 Please implement the following UI design and navigation logic:
@@ -210,5 +314,6 @@ Review the design elements in the AirCanvas interface and create an information 
 - Recalibration Trigger: Once the user is back on the Instructions page, they must perform the full hand recalibration routine (holding up just the index finger for 2 seconds) to exit the instructions page and return to their active canvas.
 
 Please integrate this final Information UI component and its state-switching logic cleanly into our main project loop.
+```
 
-
+**What changed:** Added a information button so user could hover on over if they forgot the instructions and recalibrate their hand.
