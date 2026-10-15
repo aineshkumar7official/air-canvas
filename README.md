@@ -10,7 +10,7 @@
 Air Canvas turns your hand into a stylus. A webcam tracks your fingers in real time, and different hand gestures switch between drawing, selecting colors, and clearing the canvas, with no mouse or touchscreen needed. I built it as my first prompt engineering project, to learn how to turn an idea into a working app by writing clear, iterative prompts.
 
 ## How I built it
-I built v1 with Claude Code in 12 prompts:
+I built v1 with Claude Code in 13 prompts:
 - **Structured prompts:** each prompt followed a Role → Task → Context → Constraints format.
 - **Iterative prompting:** I tested every version, noted what worked and what didn't, and used that to write the next prompt.
 - **Code review:** after v1 was done, I went through the code line by line and wrote the comments to understand the code. 
