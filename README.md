@@ -2,10 +2,10 @@
 
 > A touchless drawing tool that lets you paint in the air using just your webcam and hand movements.
 
-![Demo](docs/demo.gif)
+![Air Canvas](docs/demo.JPG)
 
 ## About
-Air Canvas turns your hand into a paintbrush. A webcam tracks your fingers in real time, and different hand gestures switch between drawing, selecting colors, and clearing the canvas, with no mouse or touchscreen needed. I built it as my first prompt engineering project, to learn how to turn an idea into a working app by writing clear, iterative prompts.
+Air Canvas turns your hand into a stylus. A webcam tracks your fingers in real time, and different hand gestures switch between drawing, selecting colors, and clearing the canvas, with no mouse or touchscreen needed. I built it as my first prompt engineering project, to learn how to turn an idea into a working app by writing clear, iterative prompts.
 
 ## How I built it
 I built v1 with Claude Code in 12 prompts:
@@ -31,13 +31,13 @@ Also includes:
 
 ## Getting started
 ### Requirements
-- Python 3.x
+- python3 --version
 - A webcam
 
 ### Install and run
 ```bash
-git clone https://github.com/YOUR-USERNAME/airCanvas.git
-cd airCanvas
+git clone https://github.com/aineshkumar7official/air-canvas.git
+cd air-canvas
 pip install -r requirements.txt
 python3 airCanvasv1.py
 ```
@@ -56,5 +56,5 @@ See [ROADMAP.md](ROADMAP.md)
 ## Author
 **Ainesh Kumar**
 USF | B.S. Computer Science & Business, FinTech | Class of 2030
-[LinkedIn](https://linkedin.com/in/YOUR-HANDLE) · [GitHub](https://github.com/YOUR-USERNAME)
+[LinkedIn](https://www.linkedin.com/in/aineshkumarofficial/) · [GitHub](https://github.com/aineshkumar7official)
 
