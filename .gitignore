@@ -1,0 +1,12 @@
+# Mac
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Downloaded automatically by the app
+hand_landmarker.task
+
+# Editor
+.vscode/
