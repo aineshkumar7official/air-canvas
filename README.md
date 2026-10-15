@@ -1,8 +1,10 @@
-# Air Canvas
+# Air Canvas 🎨
 
 > A touchless drawing tool that lets you paint in the air using just your webcam and hand movements.
 
-![Air Canvas](display.JPG)
+<p align="left">
+  <img src="display.JPG" alt="Air Canvas demo" width="200">
+</p>
 
 ## About
 Air Canvas turns your hand into a stylus. A webcam tracks your fingers in real time, and different hand gestures switch between drawing, selecting colors, and clearing the canvas, with no mouse or touchscreen needed. I built it as my first prompt engineering project, to learn how to turn an idea into a working app by writing clear, iterative prompts.
