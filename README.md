@@ -14,7 +14,7 @@ Air Canvas turns your hand into a stylus. A webcam tracks your fingers in real t
 ## What's new in v2
 v1 covered the basics: draw, select colors, and clear. v2 makes it a more complete drawing tool:
 
-- **More colors:** the palette grew from 6 to **[NUMBER] colors**
+- **More colors:** the palette grew from 6 to **24 colors**
 - **Stylus Mode:** a stylus menu with different stylus types: (pen, pencil, crayon, highlighter, paint brush)
 - **Trace & Play mode:** type a name or hover an emoji to get a gray outline to trace over (see [Features](#features))
 
