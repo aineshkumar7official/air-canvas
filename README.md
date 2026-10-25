@@ -45,8 +45,8 @@ Also includes:
 - **24 colors** and an eraser in the top toolbar
 - **Stylus Mode:** hover the stylus button to open the brush menu and pick a different stylus 
 - **Trace & Play:** hover the button under the camera, then type a name (Enter) or hover an emoji to get a gray outline to trace over. The eraser and fist-clear leave the outline alone; use "Clear outline" to remove it
-- Screenshot button: point at the camera icon to save your drawing to Downloads
-- Info button: reopens the instructions screen
+- **Screenshot button**: point at the camera icon to save your drawing to Downloads
+- **Info button**: reopens the instructions screen
 - Shaded no-draw zones and a flashing warning near the edges
 - Welcome screen with hand calibration
 
