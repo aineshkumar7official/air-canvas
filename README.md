@@ -28,6 +28,7 @@ Also includes:
 - 6 colors and an eraser in the top toolbar
 - Screenshot button: point at the camera icon to save your drawing to Downloads
 - Info button: reopens the instructions screen
+- Trace & Play: hover the button under the camera, then type a name (Enter) or hover an emoji to get a gray outline to trace over. The eraser and fist-clear leave the outline alone; use "Clear outline" to remove it
 - Shaded no-draw zones and a flashing warning near the edges
 - Welcome screen with hand calibration
 
